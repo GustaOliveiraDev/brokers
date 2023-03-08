@@ -1,7 +1,7 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHh Lpr lff"  style="height: 300px" >
     <q-header elevated>
-      <q-toolbar class="bg-mainlayout">
+      <q-toolbar class="bg-cinza text-white">
         <q-btn 
           flat
           dense
@@ -12,30 +12,30 @@
         />
 
         <q-toolbar-title class="flex justify-center text-white text-bold">
-          Criptos
+         .
         </q-toolbar-title>
 
        
       </q-toolbar>
     </q-header>
 
-    <q-drawer 
-    class="bg-mainlayout"
+    <q-drawer
+    class="bg-cinza"
       v-model="leftDrawerOpen"
       show-if-above
       bordered
     >
-    <q-list  id="menu">
-      <q-item-label
-      header
-      class="flex justify-center text-white text-bold"
+      <q-list>
+        <q-item-label
+        class="text-white"
+          header
         >
         Major currencies
         </q-item-label>
 
         <EssentialLink
+        class="text-white"
           v-for="link in essentialLinks"
-          class="text-white text-bold"
           :key="link.title"
           v-bind="link"
         />
@@ -49,6 +49,7 @@
 </template>
 
 <script>
+
 import {ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 
@@ -56,11 +57,13 @@ const linksList = [
   {
     title: 'Bitcoin',
     icon: 'fa-brands fa-bitcoin',
-     route: ''
+    link: 'bitcoin'
+    
   },
   {
     title: 'Ethereum',
     icon: 'fa-brands fa-ethereum',
+   
   },
   
 ]
@@ -72,9 +75,12 @@ export default {
     EssentialLink
   },
 
+  
+
   setup () {
     const leftDrawerOpen = ref(false)
 
+    
     return {
       essentialLinks: linksList,
       leftDrawerOpen,
@@ -82,25 +88,15 @@ export default {
         leftDrawerOpen.value = !leftDrawerOpen.value
       }
     }
-  }
+  },
+
 }
 </script>
 
 <style>
 
-#menu:hover{
-
-  color: #36af00;
-
+.bg-cinza {
+  background: #434242 !important;
 }
-
-.bg-brand {
-  background: #36af00 !important;
-}
-
-.bg-mainlayout {
-  background: #001f32 !important;
-}
-
 
 </style>
