@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page class="flex flex-center bg-a">
     
   </q-page>
 </template>
@@ -11,3 +11,11 @@ export default {
   name: 'IndexPage'
 }
 </script>
+
+<style>
+
+.bg-a {
+  background: #004360 !important;
+}
+
+</style>
