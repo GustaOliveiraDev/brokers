@@ -1,7 +1,7 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHh Lpr lff"  style="height: 300px" >
     <q-header elevated>
-      <q-toolbar class="bg-teal-10">
+      <q-toolbar class="bg-cinza text-white">
         <q-btn 
           flat
           dense
@@ -20,18 +20,21 @@
     </q-header>
 
     <q-drawer
+    class="bg-cinza"
       v-model="leftDrawerOpen"
       show-if-above
       bordered
     >
       <q-list>
         <q-item-label
+        class="text-white"
           header
         >
         Major currencies
         </q-item-label>
 
         <EssentialLink
+        class="text-white"
           v-for="link in essentialLinks"
           :key="link.title"
           v-bind="link"
@@ -46,20 +49,19 @@
 </template>
 
 <script>
+
 import {ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
     title: 'Bitcoin',
-    caption: 'teste',
-    icon: 'currencies',
+    icon: 'fa-brands fa-bitcoin',
     
   },
   {
     title: 'Ethereum',
-    caption: 'texte',
-    icon: ' currencies',
+    icon: 'fa-brands fa-ethereum',
    
   },
   
@@ -85,3 +87,14 @@ export default {
   }
 }
 </script>
+
+<style>
+
+.bg-cinza {
+  background: #434242 !important;
+}
+
+.text-verde {
+  color: #16FF00 !important;
+}
+</style>

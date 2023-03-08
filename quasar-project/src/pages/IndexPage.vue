@@ -1,6 +1,6 @@
 <template>
-  <q-page class="flex flex-center">
-    
+  <q-page class="flex flex-center ">
+    Hello Word
   </q-page>
 </template>
 
